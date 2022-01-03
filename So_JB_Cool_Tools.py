@@ -144,5 +144,9 @@ Downloading, please wait.\033[0m\n""")
 
     time.sleep(2)
     os.remove('mc_lib_1181.zip')
+    print("""\n\033[5;36;40m更新中，如有疑问请联系管理员，请等待。
+Updating, please contact the administrator if you have any questions, please wait.\033[0m\n""")
+    time.sleep(2)
+    sys.exit('Download lib file is successful')
 except:
     logging.debug(traceback.format_exc())
