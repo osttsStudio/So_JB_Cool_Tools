@@ -134,8 +134,8 @@ Downloading, please wait.\033[0m\n""")
             else: # total size is unknown
                 sys.stderr.write("read %d\n" % (readsofar,))
 
-    Zip_url = Update_Url + "/files/mc_lib_1181.zip.zip"
-    urllib.request.urlretrieve(Zip_url,"./mc_lib_1181.zip.zip",report)
+    Zip_url = Update_Url + "/files/mc_lib_1181.zip"
+    urllib.request.urlretrieve(Zip_url,"./mc_lib_1181.zip",report)
 
     Unzip1 = zipfile.ZipFile("./mc_lib_1181.zip", mode='r')
     for names in Unzip1.namelist():
