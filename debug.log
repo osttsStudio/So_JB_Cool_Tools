@@ -1,5 +1,0 @@
-2022/01/04 01:33:52 - D:\GitHub\So_JB_Cool_Tools\test.py - Traceback (most recent call last):
-  File "D:\GitHub\So_JB_Cool_Tools\test.py", line 63, in <module>
-    sys.exit(echo)
-SystemExit: Fix is complete, please run hmcl to start the game.
-
