@@ -1,0 +1,5 @@
+2022/01/03 01:38:06 - D:\GitHub\so_JB_cool_client\test.py - Traceback (most recent call last):
+  File "D:\GitHub\so_JB_cool_client\test.py", line 33, in <module>
+    sys.exit('install java')
+SystemExit: install java
+
