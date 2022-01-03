@@ -106,7 +106,7 @@ Del_file = ".minecraft\\config"
 try:
     if not os.path.exists(Backup_Path):
         os.makedirs(Backup_Path)
-        
+
     os.system('copy %s %s' % (Backup_File,Con_Backup))
     shutil.rmtree(Del_file)
     os.makedirs(Del_file)
@@ -118,8 +118,25 @@ try:
 except:
     logging.debug(traceback.format_exc())
 
-# Unzip the mc1.18.1 lib file(maybe it will support download in the future)
+# Download and unzip the mc1.18.1 lib file(maybe it will support download in the future)
 try:
+    print("""\n\033[5;36;40m下载中，请等待。
+Downloading, please wait.\033[0m\n""")
+
+    def report(blocknum, blocksize, totalsize):
+        readsofar = blocknum * blocksize
+        if totalsize > 0:
+            percent = readsofar * 1e2 / totalsize
+            s = "\r%5.1f%% %*d / %d" % (percent, len(str(totalsize)), readsofar, totalsize)
+            sys.stderr.write(s)
+            if readsofar >= totalsize:
+                sys.stderr.write("\n")
+            else: # total size is unknown
+                sys.stderr.write("read %d\n" % (readsofar,))
+
+    Zip_url = Update_Url + "/files/mc_lib_1181.zip.zip"
+    urllib.request.urlretrieve(Zip_url,"./mc_lib_1181.zip.zip",report)
+
     Unzip1 = zipfile.ZipFile("./mc_lib_1181.zip", mode='r')
     for names in Unzip1.namelist():
         Unzip1.extract(names, './.minecraft')  # unzip to .minecraft
