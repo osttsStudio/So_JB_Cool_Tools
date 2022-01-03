@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import shutil
 import zipfile
 import logging
 import traceback
@@ -52,6 +53,8 @@ Update_Url = "http://" + con.get('url','server')
 # Ver_local = con.get('ver','version')
 # Ver_server = con_server.get('ver','version')
 
+
+# Download update file
 try:
     print("""\n\033[5;36;40m下载中，请等待。
 Downloading, please wait.\033[0m\n""")
@@ -86,28 +89,44 @@ Updating, please contact the administrator if you have any questions, please wai
 except:
     logging.debug(traceback.format_exc())
 
+# Start java installer
 try:
     os.system(Java_Path)
-    sys.exit('install java')
+    sys.exit('start java installer successful')
 except:
     logging.debug(traceback.format_exc())
 
+# Try to fix the bug that hmcl crashes when starting the game at sometimes(1.18.x only)
 Backup_Path = os.getcwd() + "/.minecraft/con_backup/inventoryprofilesnext"
-Backup_File1 = ".minecraft\\config\\inventoryprofilesnext\\inventoryprofiles.json"
-Backup_File2 = ".minecraft\\config\\inventoryprofilesnext\\ModIntegrationHints.json"
+Backup_File = ".minecraft\\config\\inventoryprofilesnext"
 Con_Backup =".\\.minecraft\\con_backup\\inventoryprofilesnext"
+Con_Back_Path = ".\\.minecraft\\con_backup\\"
+Del_file = ".minecraft\\config"
 
 try:
     if not os.path.exists(Backup_Path):
         os.makedirs(Backup_Path)
-        os.system('copy %s %s' % (Backup_File1,Con_Backup))
-        os.system('copy %s %s' % (Backup_File2,Con_Backup))
+        os.system('copy %s %s' % (Backup_File,Con_Backup))
+        shutil.rmtree(Del_file)
+        os.makedirs(Del_file)
+        os.system('Xcopy %s %s /E/H/C' % (Con_Back_Path,Del_file))
+        echo = 'Fix is complete, please run hmcl to start the game.'
+        print(echo)
+        time.sleep(5)
+        sys.exit(echo)
     else:
-        os.system('copy %s %s' % (Backup_File1,Con_Backup))
-        os.system('copy %s %s' % (Backup_File2,Con_Backup))
+        os.system('copy %s %s' % (Backup_File,Con_Backup))
+        shutil.rmtree(Del_file)
+        os.makedirs(Del_file)
+        os.system('Xcopy %s %s /E/H/C' % (Con_Back_Path,Del_file))
+        echo = 'Fix is complete, please run hmcl to start the game.'
+        print(echo)
+        time.sleep(5)
+        sys.exit(echo)
 except:
     logging.debug(traceback.format_exc())
 
+# Unzip the mc1.18.1 lib file(maybe it will support download in the future)
 try:
     Unzip1 = zipfile.ZipFile("./mc_lib_1181.zip", mode='r')
     for names in Unzip1.namelist():
