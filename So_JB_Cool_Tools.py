@@ -12,11 +12,13 @@ from configparser import ConfigParser
 if os.path.exists('debug.log'):
     os.remove('debug.log') # del old log file
 
-logging.basicConfig(filename='debug.log',level=logging.DEBUG,format="%(asctime)s - %(pathname)s - %(message)s",datefmt="%Y/%m/%d %H:%M:%S")
+logging.basicConfig(filename='debug.log',level=logging.DEBUG,format="%(asctime)s - %(pathname)s - %(message)s",datefmt=\
+    "%Y/%m/%d %H:%M:%S")
 
 os.system("") # fixd print's color bug in Win10
 
-Bat_res = os.getcwd() + "/.minecraft/update.bat" # a bat file for updating itself and config, and supports deleting unnecessary files
+Bat_res = os.getcwd() + "/.minecraft/update.bat"
+# a bat file for updating itself and config, and supports deleting unnecessary files
 
 # load local config
 con = ConfigParser()
