@@ -36,16 +36,15 @@ Update_Url = "http://" + con.get('url','server')
 # except:
 #     logging.debug(traceback.format_exc())
 
-# try:
-#     if not os.path.exists(con_path):
-#         print("""\033[1;31;40m配置文件config.ini不存在，请联系管理员。
-# The config.ini does not exist, please contact the administrator.\033[0m""")
-#         input("Press Enter to exit.")
-#         os.remove('config_new.ini')
-#         sys.exit('config file not found')
+try:
+    if not os.path.exists(con_path):
+        print("""\033[1;31;40m配置文件config.ini不存在，请联系管理员。
+The config.ini does not exist, please contact the administrator.\033[0m""")
+        input("Press Enter to exit.")
+        sys.exit('config file not found')
 
-# except:
-#     logging.debug(traceback.format_exc())
+except:
+    logging.debug(traceback.format_exc())
 
 # con_server = ConfigParser()
 # con_server_path = os.path.join(os.path.abspath('.'),'config_new.ini') # config_new.ini--server config file name
@@ -118,7 +117,7 @@ try:
 except:
     logging.debug(traceback.format_exc())
 
-# Download and unzip the mc1.18.1 lib file(maybe it will support download in the future)
+# Download and unzip the mc1.18.1 lib file
 try:
     print("""\n\033[5;36;40m下载中，请等待。
 Downloading, please wait.\033[0m\n""")
