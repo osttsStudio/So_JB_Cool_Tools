@@ -119,3 +119,5 @@ jdk-17.0.1_windows-x64_bin.exe
 install_java.bat
 *.zip
 *.log
+
+.idea/
