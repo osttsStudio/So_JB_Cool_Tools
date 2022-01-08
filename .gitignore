@@ -119,5 +119,9 @@ jdk-17.0.1_windows-x64_bin.exe
 install_java.bat
 *.zip
 *.log
+test.exe
+So_JB_Cool_Tools.exe
+mc_tools.exe
 
 .idea/
+test/
