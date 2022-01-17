@@ -1,0 +1,160 @@
+﻿<local:MyCard Margin="0,0,0,5" Title="更新公告：2022.1.17 - v1.0.0 Official" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock Margin="0,0,0,4"
+                   Text="- 使用新的启动器（基于PCL2）弃用HMCL&#xA;- 修复Optifine方块和人物模型变黑bug（修复方法见下方）&#xA;- 更新Forge版本为：39.0.18&#xA;- 更新Optifine版本为：HD_U_H5_pre4&#xA;- 移除游戏中已弃用的服务器IP列表&#xA;- 修复马和使用了相同实体的生物会出现材质包导致的部分身体透明的BUG" />
+        <!-- <TextBlock Margin="20,5,20,0" FontSize="11"
+                   Text="它还有许多可以调整的属性：Margin 调整边距，FontSize 调整字号，TextWrapping 则是启用自动换行。" /> -->
+        <local:MyButton Margin="0,8,0,0" Width="250" Height="35"
+                   Text="刷新页面" EventType="刷新主页" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Margin="0,0,0,5" Title="BUG公示" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Text="马和使用了相同实体的生物会出现材质包导致的部分身体透明的BUG，会在近期修复。(已修复)" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Margin="0,0,0,5" Title="快速进入服务器" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Margin="0,0,0,7" IsWarn="False"
+                   Text="参考游戏里服务器列表" />
+        <!-- 这是第一行 -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <local:MyButton Margin="0,8,0,0" Width="250" Height="35"
+                 Text="Main Server" EventType="启动游戏" EventData="1.18.1|c.tpmc.top:25949"/>
+        </StackPanel>
+
+        <!-- 这是第二行 -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+        <local:MyButton Margin="0,8,0,0" Width="250" Height="35"
+                 Text="Non-China Server" EventType="启动游戏" EventData="1.18.1|vip.ahuamei.cn:25599"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+        <!-- <local:MyButton Margin="0,8,0,0" Width="250" Height="35"
+                 Text="弃用（历史遗留问题）" EventType="启动游戏" EventData="1.18.1|c.tpmc.top:25949"/> -->
+        <local:MyButton Margin="0,8,0,0" Width="250" Height="35"
+                 Text="Backup Server" EventType="启动游戏" EventData="1.18.1|c.tpmc.vip:25949"/>
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Margin="0,0,0,5" Title="关于弃用HMCL的说明" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Text="因为目前版本的HMCL对JAVA17的兼容性极差，在部分系统中需要使用老版本JAVA才能运行HMCL，但却不能和JAVA17同时存在，所以我们决定弃用HMCL改为使用可自定义性更高的PCL2。(保留HMCL文件的原因在于方便后续的更新)" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Margin="0,0,0,5" Title="方块和人物模型变黑bug修复方法" CanSwap="True" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <!-- <local:MyHint Text="local:MyHint 代表提示条，它默认是警告样式。" /> -->
+        <local:MyHint Margin="0,8,0,2" IsWarn="False"
+                   Text="1、（必选）设置-视频设置-性能-快速渲染 改为关&#xA;2、（可选）设置-视频设置-性能-区域渲染 改为关&#xA;如1月12日-1月13日更新过，再更新一次，然后执行上面的步骤" />
+        <!-- <TextBlock Margin="0,6,0,0"
+                   Text="卡片（local:MyCard）的 Title 属性决定了它的标题。&#xA;为卡片添加 CanSwap 属性让它可以被折叠，True 代表是，False 代表否。在此基础上，再使用 IsSwaped 属性调整它是否默认被折叠。" /> -->
+    </StackPanel>
+</local:MyCard>
+
+<!-- <local:MyCard Title="快速启动游戏">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyButton Margin="0,8,0,0" Width="250" Height="35"
+                 Text="MainServer" EventType="启动游戏" EventData="1.18.1|c.tpmc.top:25949" ToolTip="服务器 IP：c.tpmc.top:25949" />
+    </StackPanel>
+</local:MyCard> -->
+
+<local:MyCard Title="工具箱" Margin="0,0,0,30" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Margin="0,0,0,5" IsWarn="False" Text="工具箱功能：&#xA;更新客户端  安装JAVA  修复崩溃bug  下载库文件" />
+        <local:MyHint Margin="0,0,0,5" Text="暂不支持从启动器调用工具箱程序，请手动运行" />
+        <TextBlock Margin="0,0,0,4"
+                 Text="工具箱路径：{path}mc_tools.exe" />
+        <!-- <local:MyButton Margin="0,8,0,8" Width="200" Height="35"
+                   Text="打开工具箱" EventType="打开文件" EventData="{path}mc_tools.exe" ToolTip="{path}mc_tools.exe"/> -->
+    </StackPanel>
+</local:MyCard>
+
+<!-- <local:MyCard Title="按钮教学 1：基础">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock Margin="0,0,0,4"
+                   Text="你可以通过添加 local:MyButton 来新建一个按钮。你需要通过上一张卡片中提到的宽高属性来限定它的尺寸与位置，通过 Padding 属性控制它的内边距。" />
+        <TextBlock Margin="0,0,0,10"
+                   Text="按钮可以做到很多事，例如将 EventType 属性改为 打开网页，然后在 EventData 属性中写入网址，即可通过点击按钮打开网页。" />
+        <local:MyButton Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+                   Text="打开 MCBBS" EventType="打开网页" EventData="https://www.mcbbs.net/" />
+        <TextBlock Margin="0,10,0,10"
+                   Text="或者将 EventType 属性改为 弹出窗口，然后在 EventData 属性中写入弹窗的标题与内容……" />
+        <local:MyButton Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+                   Text="显示一个弹窗" EventType="弹出窗口" EventData="这是标题|标题与内容以竖线间隔。\n你也可以直接在其中换行。" />
+    </StackPanel>
+</local:MyCard> -->
+    
+<!-- <local:MyCard Title="按钮教学 2：属性">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap"
+                   Text="你可以修改 ColorType 属性来调整按钮配色，Highlight 代表当前主题色，Red 代表红色。ToolTip 属性还可以让你在鼠标悬浮在上面的时候显示提示文本。" />
+        <local:MyButton Margin="0,8,0,10" Width="250" Height="35" ColorType="Highlight"
+                   Text="打开 Wiki（按钮是主题色）" EventType="打开网页" EventData="https://minecraft-zh.gamepedia.com/Minecraft_Wiki" ToolTip="点击打开 Minecraft Wiki！" />
+        <TextBlock TextWrapping="Wrap"
+                   Text="local:MyTextButton 是没有边框的文本按钮，你同样可以设置 EventType 与 EventData 让它具有特定功能。" />
+        <local:MyTextButton Margin="0,8,0,0" HorizontalAlignment="Center"
+                   Text="点击打开知乎" EventType="打开网页" EventData="https://www.zhihu.com/" />
+    </StackPanel>
+</local:MyCard> -->
+    
+<!-- <local:MyCard Title="按钮教学 4：打开文件">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap"
+                   Text="EventType 为打开文件，EventData 为文件路径，即可点击打开特定文件或启动程序。" />
+        <local:MyButton Margin="0,8,0,8" Width="200" Height="35"
+                   Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
+        <TextBlock Margin="0,4,0,0"
+                   Text="如果能在 PCL 文件夹中找到该文件，则会优先打开 PCL 文件夹中的文件。当然，你可以使用例如 C:\ 开头的绝对路径。" />
+        <TextBlock TextWrapping="Wrap"
+                   Text="此外，PCL2 会将文件中的花括号 path 替换为 PCL 可执行文件所在文件夹（{path}），可以用于执行特定程序或加载图片。" />
+        <local:MyButton Margin="0,8,0,8" Width="200" Height="35"
+                   Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt" ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />
+        <TextBlock Margin="0,4,0,0"
+                   Text="就像为游戏指定服务器 IP 一样，你也可以在 EventData 的竖线后为程序添加启动参数。" />
+        <local:MyButton Margin="0,8,0,0" Width="200" Height="35"
+                   Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
+    </StackPanel>
+</local:MyCard> -->
+    
+<!-- <local:MyCard Title="按钮教学 5：其他命令">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock Margin="0,0,0,4"
+                   Text="EventType 为复制文本，会将 EventData 中的内容复制到剪贴板。" />
+        <TextBlock Margin="0,0,0,4"
+                   Text="EventType 为刷新主页，即可点击重新加载主页。如果你使用联网方式下载主页文件，你可以通过这一方式更新主页内容。它无需指定 EventData。" />
+        <TextBlock TextWrapping="Wrap"
+                   Text="EventType 为下载文件，会在点击时要求选择文件保存位置，并且下载 EventData 的链接中的文件。" />
+        <local:MyButton Margin="0,8,0,0" Width="250" Height="35"
+                   Text="下载 MCBBS 的 Logo" EventType="下载文件" EventData="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png" />
+    </StackPanel>
+</local:MyCard> -->
+    
+
+
+<!-- <local:MyCard Title="高级：全局动态资源绑定" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" LineHeight="17" Margin="0,0,0,15"
+                   Text="你可以使用全局动态资源绑定的方式来给你的控件赋予全局主题色。" />
+        <TextBlock TextWrapping="Wrap"
+                   Text="你好世界！" Foreground="{DynamicResource ColorBrush1}"/>
+        <TextBlock TextWrapping="Wrap"
+                   Text="你好世界！" Foreground="{DynamicResource ColorBrush3}"/>
+        <TextBlock TextWrapping="Wrap"
+                   Text="你好世界！" Foreground="{DynamicResource ColorBrush5}"/>
+        <TextBlock TextWrapping="Wrap" LineHeight="17" Margin="0,15,0,15"
+                   Text="除了字体颜色的前景色，你也可以用于背景色、边框等绝大部分的颜色参数，参考如下复杂例子。" />
+        <Border Background="{DynamicResource ColorBrush5}" BorderBrush="{DynamicResource ColorBrush2}"
+                   CornerRadius="3" HorizontalAlignment="Stretch" BorderThickness="1" Height="27px" Opacity="0.7">
+            <Grid>
+                <Path Fill="{DynamicResource ColorBrush1}" Stretch="Fill" Width="15" Height="15" HorizontalAlignment="Left" Margin="10,0,0,0"
+                        Data="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></Path>
+                <TextBlock Foreground="{DynamicResource ColorBrush1}" Margin="35,5,0,0" Text="仿造的同步主题色的信息条。" />
+            </Grid>
+        </Border>
+    </StackPanel>
+</local:MyCard> -->

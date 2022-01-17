@@ -13,7 +13,7 @@ if os.path.exists('debug.log'):
     os.remove('debug.log') # del old log file
 
 logging.basicConfig(filename='debug.log',level=logging.DEBUG,format="%(asctime)s - %(pathname)s - %(message)s",datefmt=\
-    "%Y/%m/%d %H:%M:%S")
+"%Y/%m/%d %H:%M:%S")
 
 os.system("") # fixd print's color bug in Win10
 
@@ -32,10 +32,6 @@ Con_Back_Path = ".\\.minecraft\\con_backup\\"
 Del_file = ".minecraft\\config"
 
 Java_Path = 'Java\\' + con.get('setting','java_file')
-Position = input('''
-Are you in Chinese mainland? Yse=1 No=2
-Press number:
-''')
 
 # Con_res = os.getcwd() + "./config_new.ini" # config_new.ini--server config file name
 # Url_server = con.get('url','server')
@@ -90,17 +86,14 @@ Downloading, please wait.\033[0m\n""")
             else: # total size is unknown
                 sys.stderr.write("read %d\n" % (readsofar,))
 
-        if Position == 1:
-            Update_Url = "http://" + con.get('url', 'server_cn')
-        elif Position != 1:
-            Update_Url = "http://" + con.get('url', 'server_os')
-            Zip_url = Update_Url + "/files/chii_update_1181.zip"
-            urllib.request.urlretrieve(Zip_url,"./chii_update_1181.zip",report)
+        Update_Url = "http://" + con.get('url', 'server')
+        Zip_url = Update_Url + "/files/chii_update_1181.zip"
+        urllib.request.urlretrieve(Zip_url,"./chii_update_1181.zip",report)
 
-            Unzip = zipfile.ZipFile("./chii_update_1181.zip", mode='r')
-            for names in Unzip.namelist():
-                Unzip.extract(names, './.minecraft')  # unzip to .minecraft
-            Unzip.close()
+        Unzip = zipfile.ZipFile("./chii_update_1181.zip", mode='r')
+        for names in Unzip.namelist():
+            Unzip.extract(names, './.minecraft')  # unzip to .minecraft
+        Unzip.close()
 
         time.sleep(2)
         os.remove('chii_update_1181.zip')
@@ -149,17 +142,15 @@ Downloading, please wait.\033[0m\n""")
                     sys.stderr.write("\n")
             else: # total size is unknown
                 sys.stderr.write("read %d\n" % (readsofar,))
-        if Position == 1:
-            Update_Url = "http://" + con.get('url', 'server_cn')
-        elif Position != 1:
-            Update_Url = "http://" + con.get('url', 'server_os')
-            Zip_url = Update_Url + "/files/mc_lib_1181.zip"
-            urllib.request.urlretrieve(Zip_url,"./mc_lib_1181.zip",report)
 
-            Unzip1 = zipfile.ZipFile("./mc_lib_1181.zip", mode='r')
-            for names in Unzip1.namelist():
-                Unzip1.extract(names, './.minecraft')  # unzip to .minecraft
-            Unzip1.close()
+        Update_Url = "http://" + con.get('url', 'server')
+        Zip_url = Update_Url + "/files/mc_lib_1181.zip"
+        urllib.request.urlretrieve(Zip_url,"./mc_lib_1181.zip",report)
+
+        Unzip1 = zipfile.ZipFile("./mc_lib_1181.zip", mode='r')
+        for names in Unzip1.namelist():
+            Unzip1.extract(names, './.minecraft')  # unzip to .minecraft
+        Unzip1.close()
 
         time.sleep(2)
         os.remove('mc_lib_1181.zip')
