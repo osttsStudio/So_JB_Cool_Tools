@@ -46,7 +46,7 @@ Java_Path = 'Java\\' + con.get('setting','java_file')
 try:
     Choose = int(input('''
 ┌─────────────────────────────────────────────┐
-│              So ** Cool Tools        v0.0.2 │ 
+│              So ** Cool Tools        v0.0.3 │ 
 ├─────────────────────────────────────────────┤
 │Please choose function.                      │
 │1.更新客户端 Update client                   │

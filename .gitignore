@@ -122,6 +122,7 @@ install_java.bat
 test.exe
 So_JB_Cool_Tools.exe
 mc_tools.exe
+*.xaml
 
 .idea/
 test/
