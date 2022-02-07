@@ -1,8 +1,8 @@
-# 用于Minecraft的巨**酷炫的工具箱v0.0.3
+# 用于Minecraft的巨**酷炫的工具箱v0.0.4
 
 ## 关于项目
 
-
+[开发版（tree/dev）](https://github.com/osttsStudio/So_JB_Cool_Tools/tree/dev)
 
 ## 使用环境
 
